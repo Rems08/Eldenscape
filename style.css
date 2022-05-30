@@ -1,0 +1,273 @@
+:root {
+    --main-color: #320E3E;
+    --second-color: #ffd79d;
+    --deep-purple: #d902ee;
+    --clair-purple: #f162ff;
+    --border-color: #fff;
+    --font-main: "Arial, Helvetica, sans-serif";
+}
+body{
+    background-color: var(--main-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+#main{
+  text-align: center;
+}
+#logo{
+  border-radius: 50%;
+  text-align:left;
+  width : 150px;
+  height : 150px;
+}
+h1{
+    color: var(--second-color);
+}
+h2{
+    color: var(--deep-purple);
+}
+p{
+    text-align: justify;
+    font-size: 20px;
+    color: var(--clair-purple);
+}
+#welcome{
+    margin: 100px;
+    padding: 50px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--border-color);
+}
+
+button {
+    outline: none;
+  }
+  .custom-btn {
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 130px;
+    display: block;
+    display: inline-block;
+    height: 40px;
+    padding: 10px 25px;
+    border: 2px solid var(--main-color);
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+  }
+/* Animation du bouton principal */
+.btn-main {
+   background: var(--clair-purple);
+   color: #fff;
+   z-index: 1;
+   border-radius: 5px;
+ }
+ .btn-main:after {
+    border-radius: 5px;
+   position: absolute;
+   content: "";
+   width: 0;
+   height: 100%;
+   top: 0;
+   left: 0;
+   direction: rtl;
+   z-index: -1;
+   background: var(--second-color);
+   transition: all 0.3s ease;
+ }
+ .btn-main:hover {
+   color: var(--main-color);
+   background: var(--main-color);
+ }
+ .btn-main:hover:after {
+   left: auto;
+   right: 0;
+   width: 100%;
+ }
+ .btn-main:active {
+   top: 2px;
+ }
+ /* Animation du bouton secondaire */
+.btn-second {
+    border-color: var(--clair-purple);
+    background: var(--main-color);
+   color: var(--clair-purple);
+   z-index: 1;
+   border-radius: 5px;
+ }
+ .btn-second:after {
+    border-radius: 5px;
+   position: absolute;
+   content: "";
+   width: 0;
+   height: 100%;
+   top: 0;
+   left: 0;
+   direction: rtl;
+   z-index: -1;
+   background: var(--second-color);
+   transition: all 0.3s ease;
+ }
+ .btn-second:hover {
+   color: var(--main-color);
+   border-color: var(--main-color);
+ }
+ .btn-second:hover:after {
+   left: auto;
+   right: 0;
+   width: 100%;
+ }
+ .btn-second:active {
+   top: 2px;
+ }
+
+/* *************** Formulaires ****************/
+#formulaire{
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form {
+  background-color: var(--deep-purple);
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 600px;
+  padding: 20px;
+  width: 400px;
+}
+.form p{
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+.title {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.subtitle {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.ic1 {
+  margin-top: 40px;
+}
+
+.ic2 {
+  margin-top: 30px;
+}
+
+.input {
+  background-color: var(--main-color);
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+
+.cut {
+  background-color: var(--deep-purple);
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 76px;
+}
+
+.cut-short {
+  width: 50px;
+}
+
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+}
+
+.placeholder {
+  color: #65657b;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
+  color: #808097;
+}
+
+.input:focus ~ .placeholder {
+  color: #fff;
+}
+
+.submit {
+  background-color: var(--second-color);
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: var(--main-color);
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+}
+.inscription {
+  background-color: var(--second-color);
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: var(--main-color);
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.submit:active {
+  background-color: var(--main-color);
+  color: white;
+}
+.inscription:active {
+  background-color: var(--main-color);
+  color: white;
+}
