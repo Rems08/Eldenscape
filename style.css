@@ -215,6 +215,21 @@ button {
 .input:not(:placeholder-shown) ~ .cut-confirm {
   transform: translateY(8px);
 }
+.cut-username {
+  background-color: var(--deep-purple);
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 80px;
+}
+.input:focus ~ .cut-username,
+.input:not(:placeholder-shown) ~ .cut-username {
+  transform: translateY(8px);
+}
 
 .cut-short {
   width: 50px;
