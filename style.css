@@ -3,6 +3,7 @@
     --second-color: #ffd79d;
     --deep-purple: #d902ee;
     --clair-purple: #f162ff;
+    --pastel-pink: #F699FF;
     --border-color: #fff;
     --font-main: "Arial, Helvetica, sans-serif";
 }
@@ -137,17 +138,16 @@ button {
   background-color: var(--deep-purple);
   border-radius: 20px;
   box-sizing: border-box;
-  height: 600px;
   padding: 20px;
   width: 400px;
 }
 .form p{
   text-align: center;
-  color: #fff;
+  color: var(--main-color);
   font-weight: bold;
 }
 .title {
-  color: #eee;
+  color: var(--main-color);
   font-family: sans-serif;
   font-size: 36px;
   font-weight: 600;
@@ -155,7 +155,7 @@ button {
 }
 
 .subtitle {
-  color: #eee;
+  color: var(--main-color);
   font-family: sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -199,6 +199,21 @@ button {
   transform: translateY(0);
   transition: transform 200ms;
   width: 76px;
+}
+.cut-confirm {
+  background-color: var(--deep-purple);
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 120px;
+}
+.input:focus ~ .cut-confirm,
+.input:not(:placeholder-shown) ~ .cut-confirm {
+  transform: translateY(8px);
 }
 
 .cut-short {
