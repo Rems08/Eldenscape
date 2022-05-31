@@ -26,19 +26,17 @@
             </div>
 
             <button type="text" class="submit" value='LOGIN'>Connexion</button>
-            <p>
-              &lowbar;
-            </p>
-            <p>Vous n'avez pas encore de compte ?</p>
-            <a href="inscription.html"><button type="text" class="inscription">Inscription</button></a>
             <?php
                 if(isset($_GET['erreur'])){
                     $err = $_GET['erreur'];
                     if($err==1 || $err==2)
-                        echo "<p style='color:red'>Veuillez réessayer</p>";
-                        echo "<script type='text/javascript'>alert('Utilisateur ou mot de passe incorrect');</script>";
+                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect. Veuillez réessayer</p>";
                 }
                 ?>
+            <p>
+              &lowbar;
+            </p>
+            <a href="inscription.php"><p>Vous n'avez pas encore de compte ?</p></a>
           </div>
           </form>
     </div>

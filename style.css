@@ -167,7 +167,9 @@ button {
   justify-content: center;
   height: 100vh;
 }
-
+.form a:hover{
+  color: var(--second-color);
+}
 .form {
   background-color: var(--deep-purple);
   border-radius: 20px;
