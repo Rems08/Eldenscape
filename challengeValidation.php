@@ -31,10 +31,8 @@
             echo "<h2>Record updated successfully</h2>";
           } else {
             echo "<h2>Error updating record: " . $db->error."</h2>";
-          }
-
-        
-mysqli_close($db); // fermer la connexion
+          }        
+  mysqli_close($db); // fermer la connexion
 ?> 
 </body>
 </html>

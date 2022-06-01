@@ -76,6 +76,7 @@ var MineSweeper = {
     resetGame: function() {
 
         /* Creons le champ, vide */
+        //Supprimer la ligne this.displayWin(); pour que le jeu soit opérationel en prod
         this.displayWin();
         this.game.field = new Array();
         for (i = 1; i <= this.settings['lines']; i++) {
