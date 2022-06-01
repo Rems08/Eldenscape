@@ -20,7 +20,7 @@
                 }
             ?>
         <h2>Vous êtes prêt à continuer votre aventure ?</h2>
-        <button class="custom-btn btn-main">continuer</button>
+        <a href="chapitre1/episode1/MineSweeper.php"><button class="custom-btn btn-main">continuer</button></a>
         <button class="custom-btn btn-second">Nouvelle Partie</button>
         <a href='principale.php?deconnexion=true'><button class="custom-btn btn-warning">Deconnexion</button></a>
         <!-- tester si l'utilisateur est connecté -->
