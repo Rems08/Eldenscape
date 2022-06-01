@@ -13,7 +13,7 @@
     // Verifie que l'utilisateur est connecté 
     if($_SESSION['username'] !== NULL){
         $user = $_SESSION['username'];
-        echo "<h1>Félicitation root vous avez réussi le premier challenge ! $user</h1>";
+        echo "<h1>Félicitation $user vous avez réussi le premier challenge !</h1>";
     }
     else {
         header('Location: connexion.php');
@@ -25,7 +25,7 @@
     $db_host     = 'localhost';
     $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
            or die('could not connect to database');
-        $requete = "UPDATE `utilisateur` SET `chapitre1` = '1' WHERE `utilisateur`.`username` = 'root';";
+        $requete = "UPDATE `utilisateur` SET `chapitre1`=1 WHERE `utilisateur`.`username` = '".$user."';";
         $exec_requete = mysqli_query($db,$requete);
         if ($db->query($exec_requete) === TRUE) {
             echo "<h2>Record updated successfully</h2>";
