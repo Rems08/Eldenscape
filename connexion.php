@@ -8,7 +8,7 @@
 </head>
 <body>
   <div id="main">
-    <div><a href="index.html"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo" style="text-align: center;"></a></div>
+    <div><a href="/index.html"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo" style="text-align: center;"></a></div>
     <form action="verification.php" method="POST">
       <div id="formulaire">
         <div class="form">

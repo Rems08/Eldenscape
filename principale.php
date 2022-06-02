@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
     </head>
     <body>
-    <a href="index.html"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
+    <a href="/index.html"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
     <div id="welcome">
         <!-- tester si l'utilisateur est connecté -->
         <?php

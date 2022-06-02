@@ -198,11 +198,60 @@ button {
   margin-top: 10px;
 }
 
-.input-container {
+/*ZONE Générique de validation */
+.box-input-validation{
+  display: flex;
+  flex-direction: row;
+}
+.input-validation {
+  background-color: var(--second-color);
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+.input-validation:focus ~ .cut-validation,
+.input-validation:not(:placeholder-shown) ~ .cut-validation {
+  transform: translateY(8px);
+}
+input:focus ~ .placeholder,
+.input-validation:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input-validation:not(:placeholder-shown) ~ .placeholder {
+  color: var(--second-color);
+}
+
+.input-validation:focus ~ .placeholder {
+  color: #fff;
+}
+
+.cut-validation {
+  background-color: var(--main-color);
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 76px;
+}
+.input-container-validation {
+  max-width: 500px;
   height: 50px;
   position: relative;
   width: 100%;
+  margin-top: 15px;
 }
+
 
 .ic1 {
   margin-top: 40px;
@@ -210,6 +259,12 @@ button {
 
 .ic2 {
   margin-top: 30px;
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
 }
 
 .input {
@@ -224,7 +279,6 @@ button {
   padding: 4px 20px 0;
   width: 100%;
 }
-
 .cut {
   background-color: var(--deep-purple);
   border-radius: 10px;
@@ -277,7 +331,7 @@ button {
 }
 
 .placeholder {
-  color: #65657b;
+  color: #636363;
   font-family: sans-serif;
   left: 20px;
   line-height: 14px;

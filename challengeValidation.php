@@ -31,7 +31,8 @@
             echo "<h2>Record updated successfully</h2>";
           } else {
             echo "<h2>Error updating record: " . $db->error."</h2>";
-          }        
+          }
+        header('Location: ../chapitre1/episode2/episode2.php');        
   mysqli_close($db); // fermer la connexion
 ?> 
 </body>
