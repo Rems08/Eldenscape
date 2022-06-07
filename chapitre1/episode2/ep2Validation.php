@@ -3,8 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>Accueil Eldenscape</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
 </head>
 <body>
 <?php
@@ -13,7 +11,7 @@
     // Verifie que l'utilisateur est connecté 
     if($_SESSION['username'] !== NULL){
         $user = $_SESSION['username'];
-        echo "<h1>Félicitation $user vous avez le premier challenge !</h1>";
+        echo "<h1>Félicitation $user vous avez le challenge !</h1>";
     }
     else {
         header('Location: connexion.php');

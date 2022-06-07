@@ -32,6 +32,17 @@ p{
     font-size: 20px;
     color: var(--clair-purple);
 }
+a {
+  color: var(--second-color);
+  text-decoration: underline;
+}
+a:visited {
+  color: var(--second-color);
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
 #welcome{
     margin: 100px;
     padding: 50px;
