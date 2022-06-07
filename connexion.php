@@ -38,7 +38,7 @@
             </p>
             <a href="inscription.php"><p>Vous n'avez pas encore de compte ?</p></a>
           </div>
-          </form>
+    </form>
     </div>
   </div>
       
