@@ -30,7 +30,7 @@
               &lowbar;
             </p>
             <p>Vous n'avez pas encore de compte ?</p>
-            <a href="inscription.html"><button type="text" class="inscription">Inscription</button></a>
+            <a href="inscription.php"><button type="text" class="inscription">Inscription</button></a>
             <?php
                 if(isset($_GET['erreur'])){
                     $err = $_GET['erreur'];
