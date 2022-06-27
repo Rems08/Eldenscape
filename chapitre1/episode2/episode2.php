@@ -23,6 +23,13 @@
                 </div>
                 
                 <a href="#"><button class="custom-btn btn-main">Valider</button></a>
+                <?php
+                    if( $_SESSION['err'] == true){
+                        $err_pass = "Le password n'est pas bon";
+                        echo $err_pass;
+                    }
+                ?>
+               
                 </div>
             </div>
         </form>

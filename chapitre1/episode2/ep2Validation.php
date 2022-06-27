@@ -18,10 +18,10 @@
           }
         $passep2 = valid_donnees($_POST['password-ep2']);
       
-        if($passep2 == 7439 || $passep2 == "7439"){
-        $stmt = "UPDATE utilisateur SET challenge =1 WHERE username = ?";
+      if($passep2 == 7439 || $passep2 == "7439"){
+        $stmt = "UPDATE utilisateur SET challenge =1 WHERE username = '$user'";
         $req = $DB->prepare($stmt);
-        $req->bindValue(1, $_SESSION['username'], PDO::PARAM_INT);  
+        $req->bindValue(1, $user, PDO::PARAM_INT);  
         $req ->execute();
         $challengeNb = $req->fetch();
         header('Location: ../verifChallenge'); 

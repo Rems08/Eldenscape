@@ -7,7 +7,7 @@
         // afficher un message
         $bonjour = "Bonjour $user, vous êtes connecté";
     }else{
-        
+        header("location:connexion.php");
     }  
 ?>
 <html>
@@ -27,7 +27,7 @@
                 { 
                    if($_GET['nochallenge']==true)
                    {  
-                      $nochallenge = "Vous n'avez pas encore commencer l'aventure";
+                      $nochallenge = "Vous n'avez pas encore commencer l'aventure, cliquer sur Nouvelle Partie";
                    }
                 }
         ?>
@@ -36,7 +36,7 @@
                 echo $nochallenge;
             }
         ?>
-        <button class="custom-btn btn-second">Nouvelle Partie</button>
+        <a href='chapitre1/episode1/MineSweeper.php'><button class="custom-btn btn-second">Nouvelle Partie</button></a>
         <a href='deconnexion.php'><button class="custom-btn btn-warning">Deconnexion</button></a>
         <a href='principale.php?deconnexion=true'><button class="custom-btn btn-warning">Deconnexion</button></a>
         <!-- tester si l'utilisateur est connecté -->
