@@ -10,6 +10,16 @@
     <a href="index.html"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
     <div id="welcome">
         <h1>Bienvenue sur Eldenscape</h1>
+        <?php
+            if(isset($_GET['deconnexion'])){
+                  $err = $_GET['deconnexion'];
+                  if($err==1) $valid_deco ="Deconnexion terminer";
+             }            
+             if(isset($valid_deco)){
+                  echo $valid_deco;
+             }
+
+            ?>
         <h2>Un escape game virtuel dont vous vous souviendrez !</h2>
         <p>Nous sommes en 2022, vous êtes choisis par une agence d'espionnage pour aller se renseigner sur une mystère nouvelle invention. Lors de votre mission vous serez en constante communication
             avec l'agence grâce à votre oreitette. En arrivant sur place, vous essayer de vous renseigner sur cette machine, vous découvrez alors que c'est une machine 

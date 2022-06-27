@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(isset($_SESSION['id'])){
+   header('Location: principale.php');
+}
         include_once('connexionBD.php');
 
     if(!empty($_POST)){
@@ -25,7 +29,7 @@
                 if(empty($username)){
                     $valid = false;
                     $er_pseudo = ("Le pseudo d' utilisateur ne peut pas être vide");
-                }elseif(grapheme_strlen($username) <= 3){
+                }elseif(grapheme_strlen($username) <= 2){
                     $valid = false;
                     $er_pseudo = 'Le pseduo doit faire plus de 3 caractères';
                 }elseif(grapheme_strlen($username) >= 20){
@@ -63,7 +67,6 @@
                 if(empty($password)) {
                     $valid = false;
                     $er_password = "Le mot de passe ne peut pas être vide";
-                    echo 'fdffs';
 
                 }elseif($password != $confpassword){
                     $valid = false;
@@ -77,19 +80,19 @@
                 //$date_creation = date('Y-m-d H:i:s');
                 $crypt_password = password_hash($password,PASSWORD_ARGON2ID);
                 
-                if(password_verify($password, $crypt_password)){
-                    echo 'mot de passe valide';
-                }else {
-                    echo 'pas valide';
-                }
+                // if(password_verify($password, $crypt_password)){
+                //     echo 'mot de passe valide';
+                // }else {
+                //     echo 'pas valide';
+                // }
                 //On insère les données reçues
                 $sth = $DB->prepare("
                     INSERT INTO utilisateur(username, password)
                     VALUES(?, ?)");
                 $sth->execute(array($username,$crypt_password));
-                
+                $valid_inscription ="Inscription terminer, connecter vous"; 
                 //On renvoie l'utilisateur vers la page de remerciement
-                header("Location:connexion.php");
+                header("Location:connexion.php?reussi=1");
                 exit;
             }
             catch(PDOException $e){
@@ -118,15 +121,16 @@
                 <div class="title">INSCRIPTION</div>
                 <div class="subtitle">Sauvegardez votre progression en vous inscrivant !</div>
 
-                <div class="input-container ic2">
+                <div class="input-container ic2">                  
                   <input id="email" class="input" type="text" placeholder=" " name="username" />
                   <div class="cut cut-username"></div>
+
+                  <label for="email" class="placeholder">Pseudo</label>
                   <?php
                     if(isset($er_pseudo)){
                       echo $er_pseudo;
                     }
                   ?>
-                  <label for="email" class="placeholder">E-mail</label>
                 </div>  
                 <div class="input-container ic1"> 
                   <input id="password" class="input" type="password" placeholder=" " name="password" />
@@ -144,6 +148,12 @@
                   <?php
                     if(isset($er_confpassword)){
                       echo $er_confpassword;
+                    }
+                    
+                  ?>
+                    <?php
+                    if(isset($valid_inscription)){
+                      echo $valid_inscription;
                     }
                   ?>
                   <label for="confirm_password" class="placeholder">Confirm Password</label>
