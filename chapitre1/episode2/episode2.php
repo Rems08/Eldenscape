@@ -10,7 +10,7 @@
     <a href="../../index.html"><img src="../../images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
     <div id="welcome">
         <h1>Lancer la mystérieuse machine</h1>
-        <h2>Vous venez d'entrer dans la salle super sécurité !</h2>
+        <h2>Vous venez d'entrer dans la salle super sécurisé !</h2>
         <p>Une fois la porte hackée, vous entrez maintenant dans la salle et découvrez la mystérieuse machine. Vous devez maintenant
             trouver comment lancer cette dernière... Sur le bureau vous trouvez un mystérieux dossier composé de 2 documents <a href="./documents/code.jpg" download>Une note</a> et <a href="./documents/ASCII.jpg" download>Un étrange tableau</a>...
         </p>
