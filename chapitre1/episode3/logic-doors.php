@@ -6,7 +6,7 @@
 <script src="logic-doors.js"></script>
 
 <link href="logic-doors.css" type="text/css" rel="stylesheet" />
-<link href="../../logic-doors.css" type="text/css" rel="stylesheet" />
+<link href="../../style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 
