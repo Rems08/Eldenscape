@@ -7,7 +7,7 @@
   <script src="script.js"></script>
 </head>
 <body>
-    <a href="./index.html"><img src="../../images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
+    <a href="../../index.html"><img src="../../images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
     <div id="welcome">
         <h1>Lancer la mystérieuse machine</h1>
         <h2>Vous venez d'entrer dans la salle super sécurité !</h2>
