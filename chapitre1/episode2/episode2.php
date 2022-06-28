@@ -12,7 +12,7 @@
         <h1>Lancer la mystérieuse machine</h1>
         <h2>Vous venez d'entrer dans la salle super sécurisé !</h2>
         <p>Une fois la porte hackée, vous entrez maintenant dans la salle et découvrez la mystérieuse machine. Vous devez maintenant
-            trouver comment lancer cette dernière... Sur le bureau vous trouvez un mystérieux dossier composé de 2 documents <a href="./documents/code.jpg" download>Une note</a> et <a href="./documents/ASCII.jpg" download>Un étrange tableau</a>...
+            trouver comment lancer cette dernière... <br>Sur le bureau vous trouvez un mystérieux dossier composé de 2 documents <a href="./documents/code.jpg" download>Une note</a> et <a href="./documents/ASCII.jpg" download>Un étrange tableau</a>...
         </p>
         <form action="ep2Validation.php" method="POST">
             <div class="box-input-validation">
