@@ -5,6 +5,7 @@
     --clair-purple: #f162ff;
     --pastel-pink: #F699FF;
     --border-color: #fff;
+    --warning-color: #ff3157;
     --font-main: "Arial, Helvetica, sans-serif";
 }
 body{
@@ -30,6 +31,17 @@ p{
     text-align: justify;
     font-size: 20px;
     color: var(--clair-purple);
+}
+a {
+  color: var(--second-color);
+  text-decoration: underline;
+}
+a:visited {
+  color: var(--second-color);
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
 }
 #welcome{
     margin: 100px;
@@ -123,6 +135,39 @@ button {
  .btn-second:active {
    top: 2px;
  }
+  /* Animation du bouton warning */
+.btn-warning {
+  border-color: var(--warning-color);
+  background: var(--main-color);
+ color: var(--warning-color);
+ z-index: 1;
+ border-radius: 5px;
+}
+.btn-warning:after {
+  border-radius: 5px;
+ position: absolute;
+ content: "";
+ width: 0;
+ height: 100%;
+ top: 0;
+ left: 0;
+ direction: rtl;
+ z-index: -1;
+ background: var(--warning-color);
+ transition: all 0.3s ease;
+}
+.btn-warning:hover {
+ color: var(--border-color);
+ border-color: var(--main-color);
+}
+.btn-warning:hover:after {
+ left: auto;
+ right: 0;
+ width: 100%;
+}
+.btn-warning:active {
+ top: 2px;
+}
 
 /* *************** Formulaires ****************/
 #formulaire{
@@ -133,7 +178,9 @@ button {
   justify-content: center;
   height: 100vh;
 }
-
+.form a:hover{
+  color: var(--second-color);
+}
 .form {
   background-color: var(--deep-purple);
   border-radius: 20px;
@@ -162,11 +209,60 @@ button {
   margin-top: 10px;
 }
 
-.input-container {
+/*ZONE Générique de validation */
+.box-input-validation{
+  display: flex;
+  flex-direction: row;
+}
+.input-validation {
+  background-color: var(--second-color);
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+.input-validation:focus ~ .cut-validation,
+.input-validation:not(:placeholder-shown) ~ .cut-validation {
+  transform: translateY(8px);
+}
+input:focus ~ .placeholder,
+.input-validation:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input-validation:not(:placeholder-shown) ~ .placeholder {
+  color: var(--second-color);
+}
+
+.input-validation:focus ~ .placeholder {
+  color: #fff;
+}
+
+.cut-validation {
+  background-color: var(--main-color);
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 76px;
+}
+.input-container-validation {
+  max-width: 500px;
   height: 50px;
   position: relative;
   width: 100%;
+  margin-top: 15px;
 }
+
 
 .ic1 {
   margin-top: 40px;
@@ -174,6 +270,12 @@ button {
 
 .ic2 {
   margin-top: 30px;
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
 }
 
 .input {
@@ -188,7 +290,6 @@ button {
   padding: 4px 20px 0;
   width: 100%;
 }
-
 .cut {
   background-color: var(--deep-purple);
   border-radius: 10px;
@@ -241,7 +342,7 @@ button {
 }
 
 .placeholder {
-  color: #65657b;
+  color: #636363;
   font-family: sans-serif;
   left: 20px;
   line-height: 14px;
@@ -258,7 +359,7 @@ button {
 }
 
 .input:not(:placeholder-shown) ~ .placeholder {
-  color: #808097;
+  color: var(--second-color);
 }
 
 .input:focus ~ .placeholder {

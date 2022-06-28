@@ -1,3 +1,4 @@
+
 <?php
     
     
@@ -33,6 +34,7 @@
   }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -40,6 +42,6 @@
   <title>Accueil Eldenscape</title>
 </head>
 <body>
- 
+
 </body>
 </html>

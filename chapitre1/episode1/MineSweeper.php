@@ -48,7 +48,9 @@
                 { 
                    if($_GET['validationChapitre1']==true)
                    {  
+
                       header("location:../../verifChallenge?ep1=true");
+
                    }
                 }
             ?>

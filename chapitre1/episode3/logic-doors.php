@@ -6,6 +6,9 @@
 <script src="logic-doors.js"></script>
 
 <link href="logic-doors.css" type="text/css" rel="stylesheet" />
+
+<link href="../../style.css" type="text/css" rel="stylesheet" />
+
 </head>
 <body>
 
@@ -122,7 +125,9 @@
             <div class="input-container-validation">
                 <input id="password" class="input-validation" type="text" placeholder=" " name="password" required/>
                 <div class="cut-validation"></div>
-                <label for="password" class="placeholder">Password</label><!-- resultat : A : 0, B : 1, C : 1, D : 0, E : 0, F : 1-->
+
+                <label for="password" class="placeholder">Password</label>
+
             </div>
             
             <a href="#"><button class="custom-btn btn-main">Valider</button></a>

@@ -17,7 +17,8 @@
         <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
     </head>
     <body>
-    <a href="/index.html"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
+
+    <a href="./index.html"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
     <div id="welcome">
 
         <h2>Vous êtes prêt à continuer votre aventure ?</h2>
@@ -46,6 +47,7 @@
                 }
                 ?>
         <?php
+
                 if(isset($_GET['deconnexion']))
                 { 
                    if($_GET['deconnexion']==true)

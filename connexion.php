@@ -100,8 +100,10 @@ if(isset($_POST['connexion']))
 </head>
 <body>
   <div id="main">
-    <div><a href="index.html"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo" style="text-align: center;"></a></div>
+
+    <div><a href="./index.html"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo" style="text-align: center;"></a></div>
     <form action="" method="POST" id="connexion">
+
       <div id="formulaire">
         <div class="form">
             <div class="title">CONNEXION</div>
@@ -146,8 +148,9 @@ if(isset($_POST['connexion']))
             </p>
             <p>Vous n'avez pas encore de compte ?</p>
             <a href="inscription.php"><button type="text" class="inscription">Inscription</button></a>
+
           </div>
-          </form>
+    </form>
     </div>
   </div>
       

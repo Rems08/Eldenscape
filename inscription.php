@@ -104,6 +104,7 @@ if(isset($_SESSION['id'])){
         }
     }
     ?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -114,7 +115,8 @@ if(isset($_SESSION['id'])){
 </head>
 <body>
   <div id="main">
-    <div><a href="index.html"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo" style="text-align: center;"></a></div>
+
+    <div><a href="./index.html"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo" style="text-align: center;"></a></div>
       <form method="POST" id="inscription" action=" ">
         <div id="formulaire">
             <div class="form">
@@ -172,3 +174,4 @@ if(isset($_SESSION['id'])){
     
 </body>
 </html>
+
