@@ -4,8 +4,6 @@
     include_once('connexionBD.php');     
     if(isset($_SESSION['id'])){
         $user = $_SESSION['username'];
-        // afficher un message
-        $bonjour = "Bonjour $user, vous êtes connecté";
     }else{
         header("location:connexion.php");
     }  
@@ -18,11 +16,10 @@
     </head>
     <body>
 
-    <a href="./index.html"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
+    <a href="./index.php"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
     <div id="welcome">
-
         <h2>Vous êtes prêt à continuer votre aventure ?</h2>
-        <a href="verifChallenge.php"><button class="custom-btn btn-main">continuer</button></a>
+        <a href="verifChallenge.php?nochallengeverif=true"><button class="custom-btn btn-main" name="continue">continuer</button></a>
         <?php
         if(isset($_GET['nochallenge']))
                 { 
@@ -37,8 +34,7 @@
                 echo $nochallenge;
             }
         ?>
-        <a href='chapitre1/episode1/MineSweeper.php'><button class="custom-btn btn-second">Nouvelle Partie</button></a>
-        <a href='deconnexion.php'><button class="custom-btn btn-warning">Deconnexion</button></a>
+        <a href="verifChallenge.php?newgame=true"><button class="custom-btn btn-second" name ="newGame" >Nouvelle Partie</button></a>
         <a href='principale.php?deconnexion=true'><button class="custom-btn btn-warning">Deconnexion</button></a>
         <!-- tester si l'utilisateur est connecté -->
         <?php
@@ -58,5 +54,6 @@
                 }
             ?>
     </div>
+
     </body>
 </html>

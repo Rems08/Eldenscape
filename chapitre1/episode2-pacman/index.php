@@ -1,3 +1,41 @@
+<?php
+session_start();
+include_once('../../connexionBD.php'); 
+require_once('../../CalculTime.php');
+if(auto_logout("user_time"))
+{
+    session_unset();
+    session_destroy();
+    header("location:../../connexion.php");          
+    exit;
+} 
+
+$user =  $_SESSION['username'];
+$stmt = "SELECT challenge FROM utilisateur WHERE username='$user'";
+$req = $DB->prepare($stmt);
+$req->bindValue(1, $user, PDO::PARAM_INT);  
+$req ->execute();
+$challengeNb = $req->fetch();
+// echo $challengeNb["challenge"];
+// echo "$user";    
+$Nbchallenge = $challengeNb["challenge"];
+// if($Nbchallenge != "1"){
+//     header("location:chapitre1/episode1-demineur/MineSweeper.php");
+// }
+
+    
+            //     session_start();
+            //     if($_SESSION['username'] !== NULL && $Nbchallenge == "4"){
+            //         $user = $_SESSION['username'];
+            //         $stmt = "UPDATE utilisateur SET challenge = 4 WHERE username = '$user'";
+            //         $req = $DB->prepare($stmt);
+            //         $req->bindValue(1, $user, PDO::PARAM_INT);  
+            //         $req ->execute();
+            //     }
+            //     else {
+            //         header('Location: ../../connexion.php');
+            //     }
+            // ?>
 <!DOCTYPE html>
 <html lang="fr-FR">
   <head>
@@ -6,6 +44,7 @@
     <title>EldenScape | Pacman</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="stylesheet" href="../../style.css">
   </head>
   <body>
     <h1 id = "title"> Infiltration
@@ -15,25 +54,6 @@
         <p >
             Des gardiens rodent dans les prochains couloirs. Vous allez devoir vous infiltrer sans vous faire apercevoir. <br>Trouvez comment sortir sans vous faire attraper.
         </p>
-        
-        <?php
-                session_start();
-                if($_SESSION['username'] !== NULL){
-                    $user = $_SESSION['username'];
-                    // afficher un message
-                    echo "<h1>Bonjour $user</h1>";
-                }
-                else {
-                    header('Location: ../../connexion.php');
-                }
-            ?>
-        <div>
-          &nbsp;
-        </div>
-
-
-
-
       <!-- Unity -->
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
@@ -49,22 +69,21 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title"></div>
+        <div id="unity-build-title">PacMan</div>
       </div>
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Builds.loader.js";
+      var loaderUrl = buildUrl + "/episode4.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Builds.data.br",
-        frameworkUrl: buildUrl + "/Builds.framework.js.br",
-        codeUrl: buildUrl + "/Builds.wasm.br",
+        dataUrl: buildUrl + "/episode4.data",
+        frameworkUrl: buildUrl + "/episode4.framework.js",
+        codeUrl: buildUrl + "/episode4.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "EldenScape",
         productName: "PacMan",
         productVersion: "1.0",
       };
-      config.matchWebGLToCanvasSize = false;
 
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
@@ -103,29 +122,40 @@
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
-            
             unityInstance.SetFullscreen(1);
-            
           };
         }).catch((message) => {
           alert(message);
         });
       };
-      
       document.body.appendChild(script);
     </script>
+    <!-- <form action="../../verifChallenge.php" method="POST" id="ep2pacman"></form>
     <div class="box-input-validation">
                
-            <div class="input-container-validation">
-                <input id="password" class="input-validation" type="text" placeholder=" " name="password" required/>
-                <div class="cut-validation"></div>
-                <label for="password" class="placeholder">Password</label>
-                <!-- Le mot de passe est affiché à la fin du jeu -->
-            </div>
-            
-            <a href="#"><button class="custom-btn btn-main">Valider</button></a>
-    </div>
-  </div>
+      <div class="input-container-validation">
+          <input id="password" class="input-validation" type="text" placeholder=" " name="pass_pacman"/>
+          <div class="cut-validation"></div>
+          <label for="password" class="placeholder">Password</label>
+          Le mot de passe est affiché à la fin du jeu 
+      </div> -->
+      <?php
+        // if(isset($_SESSION['validpacman'])){
+        //   if($_SESSION['validpacman'] == true){
+        //     $err_pass = "Le password n'est pas bon";
+        //     echo $err_pass;
+        //    $_SESSION['err'] = false;
 
-  </body>
+        //   }
+        // }
+      ?>
+      <a href="test.php"><button class="custom-btn btn-main">Valider</button></a>
+      <a href="test.php">fdsfdss</a>
+      
+    
+    </div>
+    </form>
+</div>
+
+</body>
 </html>

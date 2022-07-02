@@ -1,15 +1,11 @@
 <?php
 session_start();
-if(isset($_SESSION['id'])){
-   header('Location: principale.php');
-}
-        include_once('connexionBD.php');
+include_once('connexionBD.php');
 
     if(!empty($_POST)){
             extract($_POST);
             $valid = true;
-
-            if (isset($_POST['inscription'])){
+            if (isset($_POST['validinscription'])){
 
                 function valid_donnees($donnees){
                     $donnees = trim($donnees);
@@ -18,10 +14,10 @@ if(isset($_SESSION['id'])){
                     // $donnees = mysqli_real_escape_string($donnees);
                     return $donnees;
                 }
-                $username = valid_donnees($_POST["username"]);
+                $username = valid_donnees($_POST["usernameins"]);
                 // $mail = valid_donnees($_POST["mail"]);
-                $password = valid_donnees($_POST["password"]);
-                $confpassword = valid_donnees($_POST["confpassword"]);
+                $password = valid_donnees($_POST["passwordins"]);
+                $confpassword = valid_donnees($_POST["confpasswordins"]);
                 
 
 
@@ -116,7 +112,7 @@ if(isset($_SESSION['id'])){
 <body>
   <div id="main">
 
-    <div><a href="./index.html"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo" style="text-align: center;"></a></div>
+    <div><a href="./index.php"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo" style="text-align: center;"></a></div>
       <form method="POST" id="inscription" action=" ">
         <div id="formulaire">
             <div class="form">
@@ -124,7 +120,7 @@ if(isset($_SESSION['id'])){
                 <div class="subtitle">Sauvegardez votre progression en vous inscrivant !</div>
 
                 <div class="input-container ic2">                  
-                  <input id="email" class="input" type="text" placeholder=" " name="username" />
+                  <input id="email" class="input" type="text" placeholder=" " name="usernameins" />
                   <div class="cut cut-username"></div>
 
                   <label for="email" class="placeholder">Pseudo</label>
@@ -135,7 +131,7 @@ if(isset($_SESSION['id'])){
                   ?>
                 </div>  
                 <div class="input-container ic1"> 
-                  <input id="password" class="input" type="password" placeholder=" " name="password" />
+                  <input id="password" class="input" type="password" placeholder=" " name="passwordins" />
                   <div class="cut"></div>
                   <?php
                     if(isset($er_password)){
@@ -145,7 +141,7 @@ if(isset($_SESSION['id'])){
                   <label for="password" class="placeholder">Password</label>
                 </div>
                 <div class="input-container ic1">
-                  <input id="confpassword" class="input" type="password" placeholder=" " name="confpassword" />
+                  <input id="confpassword" class="input" type="password" placeholder=" " name="confpasswordins" />
                   <div class="cut-confirm"></div>
                   <?php
                     if(isset($er_confpassword)){
@@ -161,7 +157,7 @@ if(isset($_SESSION['id'])){
                   <label for="confirm_password" class="placeholder">Confirm Password</label>
                 </div>
 
-                <input type="submit" class="submit"  name="inscription" value="Inscription">
+                <input type="submit" class="submit"  name="validinscription" value="Inscription">
                 <p>
                   &lowbar;
                 </p>

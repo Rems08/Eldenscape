@@ -50,6 +50,8 @@ if(isset($_POST['connexion']))
               $_SESSION['username'] = $username; 
               $_SESSION['id'] = true; 
               $_SESSION["autoriser"] = "oui";
+              $_SESSION['err'] = false; 
+              $_SESSION['user_time'] = time();
             }
 
          }else{
@@ -101,9 +103,8 @@ if(isset($_POST['connexion']))
 <body>
   <div id="main">
 
-    <div><a href="./index.html"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo" style="text-align: center;"></a></div>
-    <form action="" method="POST" id="connexion">
-
+    <div><a href="./index.php"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo" style="text-align: center;"></a></div>
+    <form action=" " method="POST" id="Triconnexion" >
       <div id="formulaire">
         <div class="form">
             <div class="title">CONNEXION</div>
@@ -112,14 +113,11 @@ if(isset($_POST['connexion']))
             if(isset($_GET['reussi'])){
                   $err = $_GET['reussi'];
                   if($err==1) $valid_inscription ="Inscription terminer, connecter vous";
-             }            
-             if(isset($valid_inscription)){
                   echo $valid_inscription;
-             }
-
+                }            
             ?>
             <div class="input-container ic2">
-              <input id="email" class="input" type="text" placeholder=" " name="username" required/>
+              <input id="email" class="input" type="text" placeholder=" " name="username"/>
               <div class="cut cut-short"></div>
               <label for="email" class="placeholder">Pseudo</label>
               <?php
@@ -129,7 +127,7 @@ if(isset($_POST['connexion']))
                 ?>
             </div>
             <div class="input-container ic1">
-              <input id="password" class="input" type="password" placeholder=" " name="password" required/>
+              <input id="password" class="input" type="password" placeholder=" " name="password">
               <div class="cut"></div>
               <label for="password" class="placeholder">Password</label>
               <?php
@@ -148,11 +146,12 @@ if(isset($_POST['connexion']))
             </p>
             <p>Vous n'avez pas encore de compte ?</p>
             <a href="inscription.php"><button type="text" class="inscription">Inscription</button></a>
+            <a href="inscription.php">Inscription</a>
 
           </div>
-    </form>
+       </div>
+      </form>
     </div>
-  </div>
-      
+  
 </body>
 </html>

@@ -1,3 +1,30 @@
+<?php
+session_start();
+include_once('../../connexionBD.php'); 
+$user =  $_SESSION['username'];
+    $stmt = "SELECT challenge FROM utilisateur WHERE username='$user'";
+    $req = $DB->prepare($stmt);
+    $req->bindValue(1, $user, PDO::PARAM_INT);  
+    $req ->execute();
+    $challengeNb = $req->fetch();
+    // echo $challengeNb["challenge"];
+    // echo "$user";    
+    $Nbchallenge = $challengeNb["challenge"];
+    // if($Nbchallenge != "2"){
+    //header("location:chapitre1/episode2-pacman/index.php");
+    // }
+                // if($_SESSION['username'] !== NULL && $Nbchallenge == "2"){
+                //     $user = $_SESSION['username'];
+                //     $stmt = "UPDATE utilisateur SET challenge = 2 WHERE username = '$user'";
+                //     $req = $DB->prepare($stmt);
+                //     $req->bindValue(1, $user, PDO::PARAM_INT);  
+                //     $req ->execute();
+                // }
+                // else {
+                //     header('Location: ../../connexion.php');
+                // }
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,17 +51,6 @@
             <br>
         </p>
         
-        <?php
-                session_start();
-                if($_SESSION['username'] !== NULL){
-                    $user = $_SESSION['username'];
-                    // afficher un message
-                    echo "<h1>Bonjour $user</h1>";
-                }
-                else {
-                    header('Location: ../../connexion.php');
-                }
-            ?>
         <div>
           &nbsp;
         </div>
@@ -119,29 +135,33 @@
             </h3>
 
 
-
+        <form action="../../verifChallenge.php" method="POST" id="episode3logicdoors">
             <div class="box-input-validation">
                
             <div class="input-container-validation">
-                <input id="password" class="input-validation" type="text" placeholder=" " name="password" required/>
+                <input id="password" class="input-validation" type="text" placeholder=" " name="ep3logicdoors"/>
                 <div class="cut-validation"></div>
 
-                <label for="password" class="placeholder">Password</label>
-
+                <label for="password" class="placeholder" name="ep3logicdoors">Password</label>
+                <?php
+                    if( $_SESSION['err'] == true){
+                        $err_pass = "Le password n'est pas bon";
+                        echo $err_pass;
+                        $_SESSION['err'] = false;
+                    }
+                ?>
             </div>
             
-            <a href="#"><button class="custom-btn btn-main">Valider</button></a>
+            <button class="custom-btn btn-main">Valider</button>
             </div>
-        </div>
+            
+            </div>
             <div id="Table">
                 <img src ="img/logic doors/Table.png">
             </div>
 
-
-            
-
         </div>
-        
+        </form>
     </div>
 </body>
 </html>
