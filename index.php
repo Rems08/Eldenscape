@@ -31,7 +31,6 @@
             Plus le temps avance, moins vous aurez de chance de sortir et une fois les 1h passés vous serez bloquée pour toujours dans cette bulle.</p>
         <a href="inscription.php"><button class="custom-btn btn-main">S'inscrire</button></a>
         <a href="connexion.php"><button class="custom-btn btn-main">Se connecter</button></a>
-        <button onclick="alert1()" class="custom-btn btn-second">Jouer en tant qu'invité</button>
         
     </div>
 </body>
