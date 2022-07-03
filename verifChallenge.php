@@ -121,7 +121,7 @@
             $req ->execute();
             $challengeNb = $req->fetch();;
             $_SESSION['winchap1'] = true;
-            header("location:principale.php"); 
+            header("location:chapitre1/pageFinal/index.php"); 
         }else{
             $valid = false;
             $_SESSION['err'] = true;

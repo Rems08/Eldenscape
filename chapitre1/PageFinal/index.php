@@ -7,7 +7,7 @@
   <script src="script.js"></script>
 </head>
 <body>
-    <a href="../../index.html"><img src="../../images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
+    <a href="../../index.php"><img src="../../images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
     <div id="welcome">
         <h1>Felicitations !</h1>
         <p> Vous avez atteint votre objectif principal et terminé le chapitre 1 en 1h30.</p>
