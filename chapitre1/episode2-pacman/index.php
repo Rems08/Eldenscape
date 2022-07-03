@@ -47,11 +47,15 @@ $Nbchallenge = $challengeNb["challenge"];
     <link rel="stylesheet" href="../../style.css">
   </head>
   <body>
+  <a href="../../index.php"><img src="../../images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
+    
+    
+    <div class="page">
     <h1 id = "title"> Infiltration
     </h1>
-    <div class="page">
 
         <p >
+            Vous ouvrez la porte est arrivez devant un dédale de couloirs. <br>
             Des gardiens rodent dans les prochains couloirs. Vous allez devoir vous infiltrer sans vous faire apercevoir. <br>Trouvez comment sortir sans vous faire attraper.
         </p>
       <!-- Unity -->
@@ -130,15 +134,16 @@ $Nbchallenge = $challengeNb["challenge"];
       };
       document.body.appendChild(script);
     </script>
-    <!-- <form action="../../verifChallenge.php" method="POST" id="ep2pacman"></form>
+     <form action="../../verifChallenge.php" method="POST" id="ep2pacman"></form>
     <div class="box-input-validation">
                
       <div class="input-container-validation">
           <input id="password" class="input-validation" type="text" placeholder=" " name="pass_pacman"/>
           <div class="cut-validation"></div>
           <label for="password" class="placeholder">Password</label>
-          Le mot de passe est affiché à la fin du jeu 
-      </div> -->
+          <button class="custom-btn btn-main" >Valider</button>
+           
+      </div>
       <?php
         // if(isset($_SESSION['validpacman'])){
         //   if($_SESSION['validpacman'] == true){
@@ -149,8 +154,8 @@ $Nbchallenge = $challengeNb["challenge"];
         //   }
         // }
       ?>
-      <a href="test.php"><button class="custom-btn btn-main">Valider</button></a>
-      <a href="test.php">fdsfdss</a>
+      
+
       
     
     </div>

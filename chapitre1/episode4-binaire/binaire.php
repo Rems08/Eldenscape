@@ -44,7 +44,7 @@ if(isset($_SESSION['id']) ){
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Accueil Eldenscape</title>
+  <title>Binaire</title>
 
   <link rel="stylesheet" href="../../style.css">
   <script src="script.js"></script>

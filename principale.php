@@ -19,8 +19,15 @@
     <a href="./index.php"><img src="images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
     <div id="welcome">
         <h2>Vous êtes prêt à continuer votre aventure ?</h2>
-        <a href="verifChallenge.php?nochallengeverif=true"><button class="custom-btn btn-main" name="continue">continuer</button></a>
+        <a href="verifChallenge.php?nochallengeverif=true"><button class="custom-btn btn-main" name="continue">Continuer</button></a>
+        
+        <a href="verifChallenge.php?newgame=true"><button class="custom-btn btn-second" name ="newGame" >Nouvelle Partie</button></a>
+        <a href='principale.php?deconnexion=true'><button class="custom-btn btn-warning">Deconnexion</button></a>
+        <!-- tester si l'utilisateur est connecté -->
+        <div id = "continueError">
+
         <?php
+        
         if(isset($_GET['nochallenge']))
                 { 
                    if($_GET['nochallenge']==true)
@@ -29,14 +36,12 @@
                    }
                 }
         ?>
+        
         <?php
             if(isset($nochallenge)){
                 echo $nochallenge;
             }
         ?>
-        <a href="verifChallenge.php?newgame=true"><button class="custom-btn btn-second" name ="newGame" >Nouvelle Partie</button></a>
-        <a href='principale.php?deconnexion=true'><button class="custom-btn btn-warning">Deconnexion</button></a>
-        <!-- tester si l'utilisateur est connecté -->
         <?php
                 if(isset($bonjour)){
                   echo $bonjour;
@@ -53,6 +58,7 @@
                    }
                 }
             ?>
+        </div>
     </div>
 
     </body>

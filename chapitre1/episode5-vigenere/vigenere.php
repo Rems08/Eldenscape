@@ -35,10 +35,13 @@ $user =  $_SESSION['username'];
 <link href="../../style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
+    <a href="../../index.php"><img src="../../images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
+     
 
+    
+    <div class="page">
     <h1 id = "title">Le chiffre de Vigenère
     </h1>
-    <div class="page">
 
         <p >
             PP PSG HP SEFWP HWG MIHRGAII

@@ -54,12 +54,25 @@ if(isset($_SESSION['username'])){
     }
 </script>
 <link href="MineSweeper.css" type="text/css" rel="stylesheet" />
+<link href="../../style.css" type="text/css" rel="stylesheet" />
 </head>
+     
 <body>
+    <a href="../../index.php"><img src="../../images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
+   
+    
     <div class="page">
-        <h1>
-            D&eacute;mineur
-        </h1>
+    <h1 id = "title">Désamorcez les mines !
+    </h1>
+
+        <p >
+            Vous voila dans la première salle, votre objectif est de désamorcez les bombes afin d'accéder à la porte située à l'autre bout de la pièce.
+        </p>
+
+        
+              
+    
+      
 
         <div>
           &nbsp;
@@ -90,5 +103,6 @@ if(isset($_SESSION['username'])){
             </div>
         </div>
     </div>
+    
 </body>
 </html>

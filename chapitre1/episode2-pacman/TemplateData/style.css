@@ -14,7 +14,7 @@ body { padding: 0; margin: 0 }
     --font-main: "Arial, Helvetica, sans-serif";
 }
 * {font-family: Arial, sans-serif; font-size: 14px; font-weight:normal; font-style:normal; color:#454550; padding:0; margin:0; box-sizing: border-box;}
-body {background:var(--main-color); margin: 20px 100px 0px 100px;  }
+body {background:var(--main-color); margin: 20px;  }
 p {padding: 0px 0;}
 a { text-decoration:none; color:#ff9600; transition: color 0.3s; }
 a:hover {color:#00378B;}
@@ -46,7 +46,7 @@ h1{
 }
 
 /* page */
-.page {font-size:0;}
+.page {font-size:0;margin: -150px 0px 0px 310px;}
 .page .game {width:50%; display:inline-block; vertical-align:top;}
 .page .options {width:50%; display:inline-block; vertical-align:top;}
 p {
@@ -62,11 +62,16 @@ p {
 .result {font-size:30px;}
 
 
+.box-input-validation{
 
+    margin-left : -285px;;
+    margin-top : 150px;
+    width : 250px;
+}
 
 
 #unity-container { position: absolute }
-#unity-container.unity-desktop { left: 50%; top: 65%; transform: translate(-50%, -50%) }
+#unity-container.unity-desktop { left: 45%; top: 65%; transform: translate(-50%, -50%) }
 #unity-container.unity-mobile { width: 100%; height: 100% }
 #unity-canvas { background: #F79AFF ;width: 700px !important; height: 437.5px !important;}
 .unity-mobile #unity-canvas { width: 100%; height: 100% }

@@ -38,13 +38,15 @@ $user =  $_SESSION['username'];
 
 </head>
 <body>
-
+    <a href="../../index.php"><img src="../../images/logo/logo.png" alt="logo de Eldenscape" id="logo"></a>
+               
+    
+    <div class="page">
     <h1 id = "title"> La porte menant à la salle principale
     </h1>
-    <div class="page">
 
         <p >
-            Une fois arrivé au fond du couloir, vous vous trouvez devant une grande porte en fer, avec un appareil servant à entrer un code à x chiffres.<br> Sur cette porte, un panneau indique "Salle principale". Vous tendez l'oreille et n'entendez aucun bruit.<br>
+            Une fois arrivé au fond du couloir, vous vous trouvez devant une grande porte en fer, avec un appareil servant à entrer un code à  chiffres.<br> Sur cette porte, un panneau indique "Salle principale". Vous tendez l'oreille et n'entendez aucun bruit.<br>
             Vous essayez d'ouvrir la porte, de l'enfoncer, d'entrer quelques codes aléatoires, rien n'y fait, la porte ne s'ouvre pas.<br>
             Vous fouillez les environ un instant et derrière le panneau. Vous trouvez un plan mystérieux. <br>Ce plan doit surement indiquer comment trouver le mot de passe afin d'ouvrir la porte.<br>
             A vous de le trouver.  
@@ -94,7 +96,7 @@ $user =  $_SESSION['username'];
             <img src = "img/logic doors/OR.png" class = "door" id= "CD_Door">
             <img src = "img/logic doors/DEMI-LINK.png" class = "demi-link" id = "CD_First_Link">
             <img src = "img/logic doors/LINK.png" class = "link" id = "CD_LinkToCDEF_Door">
-            <img src = "img/logic doors/DEMI-LINK.png" class = "demi-link" id = "CD_LinkToCDEF_Door2">
+            <!--<img src = "img/logic doors/DEMI-LINK.png" class = "demi-link" id = "CD_LinkToCDEF_Door2">-->
             <img src = "img/logic doors/DEMI-LINK.png" class = "demi-link" id = "CD_LinkToCDEF_Door3">
             <img src = "img/logic doors/LINK.png" class = "link" id = "CD_LinkToCDEF_Door4">
             <!-- D -->
@@ -124,7 +126,7 @@ $user =  $_SESSION['username'];
             <img src = "img/logic doors/DEMI-LINK.png" class = "demi-link" id = "CDEF_Second_Link">
             <img src = "img/logic doors/LINK.png" class = "link" id = "CDEF_LinkToABCDEF_Door">
             <img src = "img/logic doors/LINK.png" class = "link" id = "CDEF_LinkToABCDEF_Door2">
-            <img src = "img/logic doors/LINK.png" class = "link" id = "CDEF_LinkToABCDEF_Door3">
+            <!-- <img src = "img/logic doors/LINK.png" class = "link" id = "CDEF_LinkToABCDEF_Door3">-->
             <img src = "img/logic doors/LINK.png" class = "link" id = "CDEF_Last_Link">
             <!-- ABCDEF -->
             <img src = "img/logic doors/AND.png" class = "door" id="ABCDEF_Door">
@@ -141,7 +143,7 @@ $user =  $_SESSION['username'];
             <div class="input-container-validation">
                 <input id="password" class="input-validation" type="text" placeholder=" " name="ep3logicdoors"/>
                 <div class="cut-validation"></div>
-
+                <br>
                 <label for="password" class="placeholder" name="ep3logicdoors">Password</label>
                 <?php
                     if( $_SESSION['err'] == true){
@@ -150,8 +152,10 @@ $user =  $_SESSION['username'];
                         $_SESSION['err'] = false;
                     }
                 ?>
+            <br> 
             </div>
-            
+            <br>
+
             <button class="custom-btn btn-main">Valider</button>
             </div>
             

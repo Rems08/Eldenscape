@@ -10,7 +10,7 @@
     --font-main: "Arial, Helvetica, sans-serif";
 }
 * {font-family: Arial, sans-serif; font-size: 14px; font-weight:normal; font-style:normal; color:#454550; padding:0; margin:0; box-sizing: border-box;}
-body {background:var(--main-color); margin:100px;}
+body {background:var(--main-color); margin:20px;}
 p {padding: 8px 0;}
 a { text-decoration:none; color:#ff9600; transition: color 0.3s; }
 a:hover {color:#00378B;}
@@ -36,9 +36,13 @@ img {border:0; max-width:100%; height:auto;}
 h1{
     color: var(--second-color);
 }
+#title{
+  font-size : 30px;
+  font-weight: bold;
+}
 
 /* page */
-.page {font-size:0;}
+.page {font-size:0; margin : 30px 20px 0px 100px; }
 .page .game {width:50%; display:inline-block; vertical-align:top;}
 .page .options {width:50%; display:inline-block; vertical-align:top;}
 
@@ -112,3 +116,5 @@ button {
    top: 2px;
  }
  
+
+

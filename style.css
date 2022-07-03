@@ -209,6 +209,10 @@ button {
   margin-top: 10px;
 }
 
+#continueError{
+  color: var(--second-color);
+}
+
 /*ZONE Générique de validation */
 .box-input-validation{
   display: flex;
@@ -402,3 +406,4 @@ input:focus ~ .placeholder,
   background-color: var(--main-color);
   color: white;
 }
+
