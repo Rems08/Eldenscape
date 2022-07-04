@@ -78,11 +78,11 @@ $Nbchallenge = $challengeNb["challenge"];
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/episode4.loader.js";
+      var loaderUrl = buildUrl + "/episode2-pacman.loader.js";
       var config = {
-        dataUrl: buildUrl + "/episode4.data",
-        frameworkUrl: buildUrl + "/episode4.framework.js",
-        codeUrl: buildUrl + "/episode4.wasm",
+        dataUrl: buildUrl + "/episode2-pacman.data",
+        frameworkUrl: buildUrl + "/episode2-pacman.framework.js",
+        codeUrl: buildUrl + "/episode2-pacman.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "EldenScape",
         productName: "PacMan",
