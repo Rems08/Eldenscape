@@ -44,7 +44,7 @@ $user =  $_SESSION['username'];
 
         <p >
         Vous vous approchez d'une table positionné dans le coin de la pièce. Sur cette table, vous trouvez une machine étrange. <br> 
-        Vous reconnaissez la machine de Turing.<br> Vous trouvez  <a href= "img/algorithme.jpg" download = "" target="_blank">un tableau</a> correspondant à <a href="img/bandeau.jpg" download = "" target="_blank">  un algorithme </a> et un bandeau avec une combinaison de 4 chiffres <br>
+        Vous reconnaissez la machine de Turing.<br> Vous trouvez  <a href= "img/algorithme.jpg" download = "" target="_blank">un tableau</a> correspondant à   un algorithme  et<a href="img/bandeau.jpg" download = "" target="_blank"> un bandeau</a> avec une combinaison de 4 chiffres <br>
         Trouvez le résultat de l'algorithme en utilisant le fonctionnement de la machine de Turing. 
         </p>
         <div>

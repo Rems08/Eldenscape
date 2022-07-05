@@ -146,7 +146,7 @@ if(isset($_POST['connexion']))
             </p>
             <p>Vous n'avez pas encore de compte ?</p>
             <a href="inscription.php"><button type="text" class="inscription">Inscription</button></a>
-            <a href="inscription.php">Inscription</a>
+            
 
           </div>
        </div>
