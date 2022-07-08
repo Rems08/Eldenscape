@@ -19,9 +19,9 @@ $challengeNb = $req->fetch();
 // echo $challengeNb["challenge"];
 // echo "$user";    
 $Nbchallenge = $challengeNb["challenge"];
-// if($Nbchallenge != "1"){
-//     header("location:chapitre1/episode1-demineur/MineSweeper.php");
-// }
+if($Nbchallenge != "1"){
+    header("location:../episode1-demineur/MineSweeper.php");
+}
 
     
             //     session_start();

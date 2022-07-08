@@ -11,17 +11,12 @@ include_once('connexionBD.php');
                     $donnees = trim($donnees);
                     $donnees = stripslashes($donnees);
                     $donnees = htmlspecialchars($donnees);
-                    // $donnees = mysqli_real_escape_string($donnees);
                     return $donnees;
                 }
                 $username = valid_donnees($_POST["usernameins"]);
-                // $mail = valid_donnees($_POST["mail"]);
                 $password = valid_donnees($_POST["passwordins"]);
                 $confpassword = valid_donnees($_POST["confpasswordins"]);
-                
 
-
-                //  Vérification du pseudo
                 if(empty($username)){
                     $valid = false;
                     $er_pseudo = ("Le pseudo d' utilisateur ne peut pas être vide");
@@ -31,35 +26,19 @@ include_once('connexionBD.php');
                 }elseif(grapheme_strlen($username) >= 20){
                     $valid = false;
                     $er_pseudo = 'Le pseduo doit faire moins de 20 caractères';
-
-                // Vérification du mail
-                // if(empty($mail)){
-                //     $valid = false;
-                //     $er_mail = "Le mail ne peut pas être vide";
-                //     echo 'fdsdd';  
-    
-                //     // On vérifit que le mail est dans le bon format
-                // }elseif(!filter_var($mail,FILTER_VALIDATE_EMAIL)){
-                //     $valid = false;
-                //     $er_mail = "Le format du mail n'est pas valide";
-                //     echo 'fdsss';
-                    
     
                 }else{
                   $stmt = $DB->prepare("SELECT username FROM utilisateur WHERE username=?");
                   $stmt->execute([$username]); 
                   $user = $stmt->fetch();
                   if ($user) {
-                      // le nom d'utilisateur existe déjà
                       $valid = false;
                       $er_pseudo = ("Ce pseudo existe déja, essayer de vous connecter");
                   } else {
-                      // le nom d'utilisateur n'existe pas
                   } 
                 }
                 
 
-                // Vérification du mot de passe
                 if(empty($password)) {
                     $valid = false;
                     $er_password = "Le mot de passe ne peut pas être vide";
@@ -68,6 +47,9 @@ include_once('connexionBD.php');
                     $valid = false;
                     $er_confpassword = "La confirmation du mot de passe ne correspond pas";
                 }
+            }else if (isset($_POST['urlconnexion']) ){
+              header("Location:connexion.php");
+              $valid = false;
             }
         if($valid){
             
@@ -86,7 +68,7 @@ include_once('connexionBD.php');
                     INSERT INTO utilisateur(username, password)
                     VALUES(?, ?)");
                 $sth->execute(array($username,$crypt_password));
-                $valid_inscription ="Inscription terminer, connecter vous"; 
+                $valid_inscription ="Inscription terminé, connectez vous"; 
                 //On renvoie l'utilisateur vers la page de remerciement
                 header("Location:connexion.php?reussi=1");
                 exit;
@@ -162,7 +144,7 @@ include_once('connexionBD.php');
                   &lowbar;
                 </p>
                 <p>Vous êtes déjà membre ?</p>
-                <a href="connexion.php"><button type="text" class="inscription">Connexion</button></a>
+                <a href="connexion.php"><button type="text" class="inscription" name="urlconnexion" >Connexion</button></a>
               </div>
             </div>
         </form>
@@ -170,4 +152,3 @@ include_once('connexionBD.php');
     
 </body>
 </html>
-

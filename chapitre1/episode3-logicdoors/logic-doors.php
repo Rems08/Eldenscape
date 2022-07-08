@@ -10,9 +10,9 @@ $user =  $_SESSION['username'];
     // echo $challengeNb["challenge"];
     // echo "$user";    
     $Nbchallenge = $challengeNb["challenge"];
-    // if($Nbchallenge != "2"){
-    //header("location:chapitre1/episode2-pacman/index.php");
-    // }
+    if($Nbchallenge != "2"){
+    header("location:../episode2-pacman/index.php");
+    }
                 // if($_SESSION['username'] !== NULL && $Nbchallenge == "2"){
                 //     $user = $_SESSION['username'];
                 //     $stmt = "UPDATE utilisateur SET challenge = 2 WHERE username = '$user'";

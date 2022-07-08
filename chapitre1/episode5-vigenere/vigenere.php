@@ -20,9 +20,9 @@ $user =  $_SESSION['username'];
     // else{
     //     header('Location: ../../connexion.php');
     // }
-// if($Nbchallenge != "4"){
-//header("location:chapitre1/episode4-binaire/binaire.php");
-// }
+if($Nbchallenge != "4"){
+header("location:../episode4-binaire/binaire.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">

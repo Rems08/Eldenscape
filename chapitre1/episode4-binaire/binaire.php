@@ -13,9 +13,9 @@ if(isset($_SESSION['id']) ){
 }else{
     header("location:../../connexion.php");
 }
-    // if($Nbchallenge != "3"){
-    //header("location:chapitre1/episode3-logicdoors/logic-doors.php");
-    // }
+    if($Nbchallenge != "3"){
+    header("location:../episode3-logicdoors/logic-doors.php");
+    }
 // if ( $Nbchallenge == "1" ){     
 //     function valid_donnees($donnees){
 //         $donnees = trim($donnees);

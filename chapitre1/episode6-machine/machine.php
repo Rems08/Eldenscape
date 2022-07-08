@@ -20,9 +20,9 @@ $user =  $_SESSION['username'];
     // else{
     //     header('Location: ../../connexion.php');
     // }
-// if($Nbchallenge != "5"){
-//header("location:chapitre1/episode5-vigenere/vigenere.php");
-// }
+if($Nbchallenge != "5"){
+header("location:../episode5-vigenere/vigenere.php");
+}
             ?>
 <!DOCTYPE html>
 <html lang="fr">

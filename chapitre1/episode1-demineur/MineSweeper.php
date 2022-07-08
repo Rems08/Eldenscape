@@ -13,9 +13,9 @@ if(isset($_SESSION['id']) ){
 }else{
     header("location:../../connexion.php");
 }
-// if($Nbchallenge != "0"){
-//     header("location:../../principale.php");
-// }
+if($Nbchallenge != "0"){
+    header("location:../../principale.php");
+}
 if(auto_logout("user_time"))
 {
     session_unset();

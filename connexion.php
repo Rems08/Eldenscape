@@ -5,92 +5,76 @@ if(isset($_SESSION['id'])){
 }
 include_once('connexionBD.php');
 
-if(isset($_POST['connexion']))
-{
-        $valid = true ;
-         // connexion à la base de données
-         // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
-         // pour éliminer toute attaque de type injection SQL et XSS
-         function valid_donnees($donnees){
-            $donnees = trim($donnees);
-            $donnees = stripslashes($donnees);
-            $donnees = htmlspecialchars($donnees);
-            // $donnees = mysqli_real_escape_string($donnees);
-            return $donnees;
-      }
-      $username = valid_donnees($_POST["username"]);
-      // $mail = valid_donnees($_POST["mail"]);
-      $password = valid_donnees($_POST["password"]);
+if(!empty($_POST)){
+  extract($_POST);
+  $valid = true;
+  if(isset($_POST['connexion']))
+  {
+          $valid = true ;
+          // connexion à la base de données
+          // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
+          // pour éliminer toute attaque de type injection SQL et XSS
+          function valid_donnees($donnees){
+              $donnees = trim($donnees);
+              $donnees = stripslashes($donnees);
+              $donnees = htmlspecialchars($donnees);
+              // $donnees = mysqli_real_escape_string($donnees);
+              return $donnees;
+        }
+        $username = valid_donnees($_POST["username"]);
+        // $mail = valid_donnees($_POST["mail"]);
+        $password = valid_donnees($_POST["password"]);
 
-      if(empty($username)){
-         $valid = false;
-         $er_pseudo = ("Le pseudo d' utilisateur ne peut pas être vide");
-      }
-
-      if(empty($password)) {
-         $valid = false;
-         $er_password = "Le mot de passe ne peut pas être vide";
-
-      }
-    try{
-      if($valid){
-         $requete = $DB->prepare("SELECT password FROM utilisateur where 
-         username = ?");
-
-         $requete->execute(array($username));
-
-         $req= $requete->fetch();
-
-         if(isset($req['password'])){
-            if(!password_verify($password, $req['password'])){
-              $valid = false;
-               $er_combinaison = "Le mot de passe ou le pseudo est incorrecte";
-            }else{
-              header('Location: principale.php');
-              $_SESSION['username'] = $username; 
-              $_SESSION['id'] = true; 
-              $_SESSION["autoriser"] = "oui";
-              $_SESSION['err'] = false; 
-              $_SESSION['user_time'] = time();
-            }
-
-         }else{
-            $valid = false;
-            $er_combinaison = "Le mot de passe ou le pseudo est incorrecte";
-         }
-      }
-    }
-        catch(PDOException $e){
-          die('Erreur:'.$e->getMessage());
+        if(empty($username)){
+          $valid = false;
+          $er_pseudo = ("Le pseudo d' utilisateur ne peut pas être vide");
         }
 
-    // try{
-    //       if($valid)
-    //       {
-    //         $requete = $DB->prepare("SELECT * FROM utilisateur where 
-    //         username = ?");
-  
-    //         $requete->execute(array($username));  
-  
-    //         $req_user= $requete->fetch();
-    //           if(isset($req_user['id'])){
-    //                 $_SESSION['id'] = $req_user['id'];
-    //                 $_SESSION['username'] = $req_user['username'];
+        if(empty($password)) {
+          $valid = false;
+          $er_password = "Le mot de passe ne peut pas être vide";
 
-    //                 header('Location : principale.php');
-    //           }
+        }
+      }else if (isset($_POST['urlinscription']) ){
+        header("Location:inscription.php");
+        $valid = false;
+      }    
+        if($valid){
+          try{
+            $requete = $DB->prepare("SELECT password FROM utilisateur where 
+            username = ?");
 
-    //       }
-    //       else{
-    //             $valid = false;
-    //             $er_combinaison = "Le mot de passe ou le pseudo est incorrecte";
-    //             header('Location : principale.php');
-    //             }
-    //         }
-    //           catch(PDOException $e){
-    //             die('Erreur:'.$e->getMessage());
-    //         }
+            $requete->execute(array($username));
+
+            $req= $requete->fetch();
+
+            if(isset($req['password'])){
+                if(!password_verify($password, $req['password'])){
+                  $valid = false;
+                  $er_combinaison = "Le mot de passe ou le pseudo est incorrecte";
+                }else{
+                  header('Location: principale.php');
+                  $_SESSION['username'] = $username; 
+                  $_SESSION['id'] = true; 
+                  $_SESSION["autoriser"] = "oui";
+                  $_SESSION['err'] = false; 
+                  $_SESSION['user_time'] = time();
+                }
+
+            }else{
+                $valid = false;
+                $er_combinaison = "Le mot de passe ou le pseudo est incorrecte";
+            }
+          
+               }
+    
+            catch(PDOException $e){
+              die('Erreur:'.$e->getMessage());
+              }
+      }
+    
 }
+
 ?>
 <!doctype html>
 <html lang="fr">
@@ -145,8 +129,9 @@ if(isset($_POST['connexion']))
               &lowbar;
             </p>
             <p>Vous n'avez pas encore de compte ?</p>
-            <a href="inscription.php"><button type="text" class="inscription">Inscription</button></a>
-            
+            <a href=""><button type="text" class="inscription" name ="urlinscription">Inscription</button></a>
+
+
 
           </div>
        </div>
